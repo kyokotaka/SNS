@@ -14,4 +14,6 @@ class ProfileController extends Controller
     public function profile(){
         return view('profiles.profile');
     }
+
+    
 }

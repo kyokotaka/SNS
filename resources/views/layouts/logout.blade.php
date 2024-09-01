@@ -23,8 +23,8 @@
         <link rel="apple-touch-icon-precomposed" href="画像のURL" />
     </head>
     <body>
-        <header>
-            <h1><img src="images/atlas.png"></h1>
+        <header class="login_content">
+            <div class= "Atlas_logo"><img src="images/atlas.png"></div>
             <p>Social Network Service</p>
         </header>
         <div id="container">
@@ -35,3 +35,4 @@
         <script src="JavaScriptファイルのURL"></script>
     </body>
 </html>
+<!-- ロゴの部分をかくページ -->

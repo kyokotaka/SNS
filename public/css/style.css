@@ -5,7 +5,7 @@ body{
 }
 /* header */
 header{
-    background:#186AC9;
+    background:linear-gradient(0deg, rgba(255,255,193,1) 0%, rgba(209,255,209,1) 19%, rgba(193,255,255,1) 99%);
 }
 
 /* main content */

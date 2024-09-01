@@ -7,7 +7,15 @@ use Illuminate\Http\Request;
 class PostsController extends Controller
 {
     //
-    public function index(){
+    public function index()
+    {
         return view('posts.index');
+    }
+
+    public function post_create(Request $request)
+    {
+        //$user = Auth::user();
+        
+
     }
 }
