@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {
     use HasFactory;
+
+    public function user()//ポストとユーザーを紐付けるリレーション
+    {
+        return $this->belongsTo('App\Models\User');//ポストに対してユーザーは一人しかいないため
+    }
 }
