@@ -27,6 +27,8 @@ Route::get('/top', [PostsController::class, 'index']);//ログイン後トップ
 
 Route::post('/post/create',[PostsController::class,'post_create']);
 
+Route::get('/post/delete/id',[PostsController::class,'post_delete']);
+
 Route::get('profile', [ProfileController::class, 'profile']);
 
 Route::get('/search', [UsersController::class, 'search']);
@@ -36,6 +38,9 @@ Route::get('/follow-list', [PostsController::class, 'index']);
 Route::get('/follower-list', [PostsController::class, 'index']);
 
 Route::post('/follow', [UsersController::class, 'follow']);
+
+
+Route::get('/user_profile/{id}', [UsersController::class, 'user_profile']);
 
 Route::get('/logout', [AuthenticatedSessionController::class, 'logout']);//aタグなのでgetでOK
 });

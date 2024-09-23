@@ -9,7 +9,7 @@ use Auth;
 
 class UsersController extends Controller
 {
-    //
+    //検索機能
     public function search(Request $request)
     {
         $keyword = $request->input('search');
@@ -47,5 +47,12 @@ class UsersController extends Controller
         }
 
         return back();
+    }
+
+    public function user_profile($id)
+    {
+        $users_info = User::where('id',$id)->get();
+        
+        return view('users.user-profile',compact('users_info'));
     }
 }

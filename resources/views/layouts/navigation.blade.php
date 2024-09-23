@@ -1,5 +1,5 @@
 <div class="head_container">
-    <a href="/top"><img src="images/atlas.png" class="Atlas_img"></a>
+    <a href="/top"><img src="{{ asset ('images/atlas.png' )}}" class="Atlas_img"></a>
     <p>{{auth()->user()->username}}さん</p>
     <div class='accordion_menu'>
         <ul>

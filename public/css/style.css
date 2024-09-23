@@ -5,7 +5,7 @@ body{
 }
 /* header */
 header{
-    background:linear-gradient(0deg, rgba(255,255,193,1) 0%, rgba(209,255,209,1) 19%, rgba(193,255,255,1) 99%);
+    background: linear-gradient(0deg, rgba(238,231,224,1) 0%, rgba(237,228,225,1) 19%, rgba(248,244,230,1) 99%);
     height: 10rem;
 }
 
@@ -61,6 +61,11 @@ header{
 
 }
 
+.search_area Form{
+    display: flex;
+    align-items: center;
+}
+
 .search{
     height: 3rem;
     width: 80%;
@@ -71,29 +76,31 @@ header{
 }
 
 .search_btn{
-    width:9%;
-    margin-top: 1%;
+    width:10%;
 }
 
 .search_user_detail{
     display: flex;
-    justify-content: space-between;
-    margin-left: 35%;
-    font-size: 1.3em;
     font-weight:bold;
 }
 
-.search_user_detail img{
-    /* margin-right: 5%; */
+.search_user_detail a{
+    margin-left: 30%;
     width: 5rem;
 }
 
-.search_user_detail p{
-    /* text-indent: 0%; */
+.search_username{
+    width: 200px;
     margin-left: 10%;
+    font-size: 1.5em;
 }
 
+.search_bio{
+    width: 200px;
+}
+
+
+
 .search_user_detail button{
-    /* margin-left: 10%; */
-    text-indent: 0%;
+   
 }

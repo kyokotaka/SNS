@@ -12,9 +12,9 @@ class PostsController extends Controller
     //
     public function index()
     {
-        $users = auth()->user();
-
-        return view('posts.index',compact('users'));
+        $posts = Post::all();
+        // ->whereIn('user_id',Auth::user()->isFollowing()->pluck('followed_id'))->toArray();
+        return view('posts.index',compact('posts'));
     }
 
     public function post_create(Request $request)
@@ -34,8 +34,9 @@ class PostsController extends Controller
 
     }
 
-    public function post_delete()
+    public function post_delete($id)
     {
-
+        Post::where('id',$id)->delete();
+        
     }
 }

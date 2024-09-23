@@ -25,6 +25,7 @@ class User extends Authenticatable
         'username',
         'email',
         'password',
+        'updated_at'
     ];
 
     /**
@@ -60,10 +61,10 @@ class User extends Authenticatable
         $id = $this->id;
     
         //ログインユーザーが対象ユーザーをフォローしているか？をtrue/falseで返す
-        $follow = (boolean) Auth::user()->following_user()->where('following_id', $id)->first();
+        $follow = (boolean) Auth::user()->following_user()->where('followed_id', $id)->first();
     
         //対象Userが自分をフォローしているか？をtrue/falseで返す
-        $follower = (boolean) $this->following_user()->where('following_id', Auth::user()->id)->first();
+        $follower = (boolean) $this->following_user()->where('followed_id', Auth::user()->id)->first();
     
         if(!($follow) && !($follower)){ //0:どちらもフォローしていない
             $result = 0;
@@ -82,7 +83,7 @@ class User extends Authenticatable
     public function isFollowing()
     {
         $id = $this->id;
-        $isFollowing = (boolean) Auth::user()->following_user()->where('following_id',$id)->first();
+        $isFollowing = (boolean) Auth::user()->following_user()->where('followed_id',$id)->first();
 
         return $isFollowing;
     }
