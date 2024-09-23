@@ -57,6 +57,8 @@ header{
 
 .search_area {
     display: flex;
+    border-bottom: 5px dashed #ede4e1;
+
 }
 
 .search{
@@ -74,16 +76,24 @@ header{
 }
 
 .search_user_detail{
+    display: flex;
+    justify-content: space-between;
     margin-left: 35%;
     font-size: 1.3em;
     font-weight:bold;
 }
 
 .search_user_detail img{
-    margin-right: 5%;
+    /* margin-right: 5%; */
     width: 5rem;
 }
 
-.search_user_detail button{
+.search_user_detail p{
+    /* text-indent: 0%; */
     margin-left: 10%;
+}
+
+.search_user_detail button{
+    /* margin-left: 10%; */
+    text-indent: 0%;
 }

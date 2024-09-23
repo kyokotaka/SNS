@@ -9,4 +9,8 @@ class Follow extends Model
 {
     use HasFactory;
 
+    public function follow_user()
+    {
+        return $this->hasMany('App\Models\User');
+    }
 }
