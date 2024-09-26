@@ -1,5 +1,5 @@
 <x-login-layout>
-@foreach($users_info as $user_info)
+  @foreach($users_info as $user_info)
     <div class="">
       <a href="/user_profile/{{$user_info->id}}"><img src="{{ asset('images/' . $user_info->icon_image) }}" alt="ユーザーアイコン"></a>
       <p class="">{{$user_info->username}}</p>
@@ -21,4 +21,8 @@
       </form>
     </div>
   @endforeach
+  @foreach($users_post as $user_post)
+  {{$user_post->post}}
+  @endforeach
+
 </x-login-layout>

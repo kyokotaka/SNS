@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Follow;
+use App\Models\Post;
 use Auth;
 
 class UsersController extends Controller
@@ -52,7 +53,8 @@ class UsersController extends Controller
     public function user_profile($id)
     {
         $users_info = User::where('id',$id)->get();
-        
-        return view('users.user-profile',compact('users_info'));
+        $users_post = Post::where('user_id',$id)->get();
+
+        return view('users.user-profile',compact('users_info','users_post'));
     }
 }

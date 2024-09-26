@@ -3,6 +3,7 @@
 
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <!--IEブラウザ対策-->
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="description" content="ページの内容を表す文章" />
@@ -54,8 +55,10 @@
   <footer>
   </footer>
   <script src="{{ asset('js/app.js') }}"></script>
+  <script src="{{ asset('js/script.js') }}"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
-  <script src="JavaScriptファイルのURL"></script>
+  <script src="https://code.jquery.com/jquery-3.x.x.min.js"></script>
+  
 </body>
 
 </html>

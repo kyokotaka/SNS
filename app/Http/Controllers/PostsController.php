@@ -37,6 +37,7 @@ class PostsController extends Controller
     public function post_delete($id)
     {
         Post::where('id',$id)->delete();
-        
+        return redirect(url('/top'))->with('message', 'ユーザーが削除されました');
+
     }
 }

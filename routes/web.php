@@ -27,9 +27,10 @@ Route::get('/top', [PostsController::class, 'index']);//ログイン後トップ
 
 Route::post('/post/create',[PostsController::class,'post_create']);
 
-Route::get('/post/delete/id',[PostsController::class,'post_delete']);
+Route::get('/post/delete/{id}',[PostsController::class,'post_delete']);
 
-Route::get('profile', [ProfileController::class, 'profile']);
+Route::get('/profile', [ProfileController::class, 'profile']);
+Route::post('/profile/edit', [ProfileController::class, 'profile_edit']);
 
 Route::get('/search', [UsersController::class, 'search']);
 Route::post('/search', [UsersController::class, 'search']);

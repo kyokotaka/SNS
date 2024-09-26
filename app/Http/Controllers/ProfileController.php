@@ -15,5 +15,14 @@ class ProfileController extends Controller
         return view('profiles.profile');
     }
 
+    // public function profile_edit(Request $request){
+    //     User::update([
+    //         'username' => $request->username,
+    //         'email' => $request->email,
+    //         'password' => Hash::make($request->password),
+    //         'bio' => $request->bio,
+    //     ]);
+    //     return redirect('/profile');
+    // }
     
 }
