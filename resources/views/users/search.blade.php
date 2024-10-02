@@ -12,7 +12,7 @@
   </div>
   @foreach($users as $user)
     <div class="search_user_detail">
-      <a href="/user_profile/{{$user->id}}"><img src="{{ asset('images/' . $user->icon_image) }}" alt="ユーザーアイコン"></a>
+      <a href="/user_profile/{{$user->id}}"><img src="{{ asset('storage/image/' . $user->icon_image) }}" alt="ユーザーアイコン"></a>
       <p class="search_username">{{$user->username}}</p>
       <p class="search_bio">{{$user->bio}}</p>
       <form method="POST" action="{{ '/follow' }}">

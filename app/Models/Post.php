@@ -10,6 +10,10 @@ class Post extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'updated_at'
+    ];
+
     public function user()//ポストとユーザーを紐付けるリレーション
     {
         return $this->belongsTo('App\Models\User');//ポストに対してユーザーは一人しかいないため

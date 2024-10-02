@@ -24,6 +24,48 @@ header{
     margin-top: 2.5%;
 }
 
+.accordion {
+    margin-right: 2%;
+    margin-top: 1%;
+  }
+  .accordion-title {
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+  .accordion-menu {
+    display: none;
+    padding: 10px 20px;
+  }
+  .accordion-content li {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  
+  /* 矢印 */
+  .accordion-title {
+    position: relative;
+  }
+  .accordion-title::after {
+    border-right: solid 2px #fff;
+    border-top: solid 2px #fff;
+    content: "";
+    display: block;
+    height: 8px;
+    position: absolute;
+    right: 25px;
+    top: 38%;
+    transform: rotate(135deg);
+    transition: transform .3s ease-in-out, top .3s ease-in-out;
+    width: 8px;
+  }
+  .accordion-title.open::after {
+    top: 45%;
+    transform: rotate(-45deg);
+  }
+
 .accordion_menu{
     margin-right: 2%;
     margin-top: 1%;

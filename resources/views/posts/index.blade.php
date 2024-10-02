@@ -10,9 +10,10 @@
 
   @foreach($posts as $post)
     @if(!$post->user_id != auth()->user()->id)
-      <a href="/user_profile/{{$post->user->id}}"><img src="{{ asset('images/' . $post->user->icon_image) }}" alt="ユーザーアイコン"></a>
+      <a href="/user_profile/{{$post->user->id}}"><img src="{{ asset('storage/' . $post->user->icon_image) }}" alt="ユーザーアイコン"></a>
     @else
-      <a href="/profile"><img src="{{ asset('images/' . $post->user->icon_image) }}" alt="ユーザーアイコン"></a>
+      <a href="/profile"><img src="{{ asset('storage/' . $post->user->icon_image) }}" alt="ユーザーアイコン"></a>
+      {{ dd($post->user->icon_image) }}
     @endif
     {{$post->user->username}}
     {{$post->post}}

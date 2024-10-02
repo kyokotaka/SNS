@@ -1,6 +1,6 @@
 <x-login-layout>
 
-  {{Form::open(['url' => '/profile/edit','files' => true] )}}
+  {{Form::open(['url' => '/profile/edit','files' => true] )}}<!-- enctype="multipart/form-data" ='files' => true -->
   @csrf
   <div class="user_profile">
     {{ Form::label ('ユーザー名') }}
@@ -9,11 +9,11 @@
     {{ Form::label ('メールアドレス') }}
     {{ Form::email ('email',(auth()->user()->email),['class' => 'input']) }}
 
-    {{ Form::label ('パスワード') }}
+    <!-- {{ Form::label ('パスワード') }}
     {{ Form::text ('password',null,['class' => 'input']) }}
 
     {{ Form::label ('パスワード確認') }}
-    {{ Form::text ('password_confirmation',null,['class' => 'input']) }}
+    {{ Form::text ('password_confirmation',null,['class' => 'input']) }} -->
 
     {{ Form::label ('自己紹介') }}
     {{ Form::text ('bio',(auth()->user()->bio),['class' => 'input']) }}
