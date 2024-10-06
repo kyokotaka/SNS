@@ -6,8 +6,8 @@
         {{ Form::input('text','search',$keyword,['class' => 'search','placeholder' => 'ユーザー名'])}}
         <input type="image" name="submit" class="search_btn" src="{{asset('images/search.png')}}">
     {{ Form::close() }}
-    <div class="message">
-      {{$message}}
+    <div class="search_message">
+      <p>{{$message}}</p>
     </div>
   </div>
   @foreach($users as $user)

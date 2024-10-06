@@ -38,10 +38,7 @@ header{
     display: none;
     padding: 10px 20px;
   }
-  .accordion-content li {
-    font-size: 13px;
-    line-height: 1.5;
-  }
+  
 
   
   /* 矢印 */
@@ -49,8 +46,8 @@ header{
     position: relative;
   }
   .accordion-title::after {
-    border-right: solid 2px #fff;
-    border-top: solid 2px #fff;
+    border-right: solid 2px #000;
+    border-top: solid 2px #000;
     content: "";
     display: block;
     height: 8px;
@@ -75,6 +72,8 @@ header{
 	display: none; /* ラジオボタンのボタンを消す */
 }
 
+
+
 .auth_user_icon{
     height: 50px;
     margin-right: 2%;
@@ -93,6 +92,12 @@ header{
     flex: 0 0 19%;
     border-left: 1px solid #727272;
     width: 20vw;
+}
+
+/* index.blade */
+
+.post_icon img{
+    width: 5%;
 }
 
 /* ユーザー検索画面 */
@@ -119,6 +124,10 @@ header{
 
 .search_btn{
     width:10%;
+}
+
+.search_message{
+    margin-top: 15px;
 }
 
 .search_user_detail{
