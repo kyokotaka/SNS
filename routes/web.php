@@ -26,7 +26,7 @@ Route::group(['middleware' => 'auth'],function(){
 Route::get('/top', [PostsController::class, 'index']);//ログイン後トップに飛ぶためのルーティング
 
 Route::post('/post/create',[PostsController::class,'post_create']);
-
+Route::post('/post/update/{id}',[PostsController::class,'post_update']);
 Route::get('/post/delete/{id}',[PostsController::class,'post_delete']);
 
 Route::get('/profile', [ProfileController::class, 'profile']);

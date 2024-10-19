@@ -20,10 +20,22 @@
     {{$post->post}}
     {{$post->updated_at}}
     @if($post->user_id == auth()->user()->id)
-      <a href="/post/update/{{$post->id}}"><img src="{{ asset('images/edit.png' ) }}" alt="編集ボタン"></a>
+      <a class="update-modal-open" href="" post="{{ $post->post }}" post_id="{{ $post->id }}"><img src="{{ asset('images/edit.png' ) }}" alt="編集ボタン"></a>
       <a href="/post/delete/{{$post->id}}" onclick="return confirm('本当に削除しますか？')"><img src="{{ asset('images/trash.png' ) }}" alt="削除ボタン"></a>
       @csrf
       @method('DELETE')
     @endif
   @endforeach
+    <div class="modal js-modal">
+        <div class="modal__bg js-modal-close"></div>
+        <div class="modal__content">
+           <form action="/post/update/{{$post->id}}" method="post">
+                <textarea name="update_post" class="modal_post"></textarea>
+                <input type="hidden" name="update_id" class="modal_id">
+                <input type="submit" value="更新">
+                {{ csrf_field() }}
+           </form>
+           <a class="js-modal-close" href="">閉じる</a>
+        </div>
+    </div>
 </x-login-layout>

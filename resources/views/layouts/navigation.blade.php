@@ -3,7 +3,7 @@
     <p>{{auth()->user()->username}}さん</p>
     <div class="accordion">
         <div div class="accordion-container">
-            <div class="accordion-title">
+            <div class="accordion-title" id="js-accordion-menu">
                 <div class='accordion-menu'>
                     <ul>
                         <li><a href="/top">ホーム</a></li>

@@ -20,7 +20,6 @@ class PostsController extends Controller
 
     public function post_create(Request $request)
     {
-        $user = Auth::user();
         //投稿のインスタンス作成
         $new_post = new Post();
         $new_post->post = $request->post;
@@ -30,9 +29,15 @@ class PostsController extends Controller
         return redirect('/top');
     }
 
-    public function post_update(Request $request)
+    public function post_update(Request $request )
     {
-
+      $id=$request->input('update_id');
+      $update_post=$request->input('update_post');
+        
+      Post::where('id',$id)->update([
+            'post'=>$update_post]);
+        
+        return redirect('/top');
     }
 
     public function post_delete($id)
