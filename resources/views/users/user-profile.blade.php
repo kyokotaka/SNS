@@ -1,10 +1,10 @@
 <x-login-layout>
-  @foreach($users_info as $user_info)
-    <div class="">
+  <!-- @foreach($users_info as $user_info) -->
+    <div class="user_profile_area">
       <a href="/user_profile/{{$user_info->id}}"><img src="{{ asset('storage/' . $user_info->icon_image) }}" alt="ユーザーアイコン"></a>
       <div class="">
-        <p>{{$user_info->username}}</p>
-        <p>{{$user_info->bio}}</p>
+        <p>ユーザー名　{{$user_info->username}}</p>
+        <p>自己紹介　{{$user_info->bio}}</p>
       </div>
       <div class="">
         @switch($user_info->relation())
@@ -25,7 +25,7 @@
           @endif
       </form>
     </div>
-  @endforeach
+  <!-- @endforeach -->
   @foreach($users_post as $user_post)
   <img src="{{ asset('storage/' . $user_post->user->icon_image) }}" alt="ユーザーアイコン">
   {{$user_post->post}}

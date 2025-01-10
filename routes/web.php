@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\PostsController;
+use App\Http\Controllers\FollowsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 
@@ -35,8 +36,8 @@ Route::post('/profile/edit', [ProfileController::class, 'profile_edit']);
 Route::get('/search', [UsersController::class, 'search']);
 Route::post('/search', [UsersController::class, 'search']);
 
-Route::get('/follow-list', [PostsController::class, 'index']);
-Route::get('/follower-list', [PostsController::class, 'index']);
+Route::get('/follow-list', [FollowsController::class, 'followList']);
+Route::get('/follower-list', [FollowsController::class, 'followerList']);
 
 Route::post('/follow', [UsersController::class, 'follow']);
 

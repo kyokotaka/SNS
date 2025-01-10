@@ -179,3 +179,12 @@ header{
     transform: translate(-50%,-50%);
     width: 60%;
 }
+
+.user_profile_area{
+    display: flex;
+    border-bottom: 5px dashed #ede4e1;
+}
+
+.user_profile_area img{
+    width: 50px;
+}
