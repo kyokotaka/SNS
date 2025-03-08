@@ -5,11 +5,9 @@
 $(function () {
 
   // タイトルをクリックすると
-  $("#js-accordion-menu").on("click", function () {
-    // クリックした次の要素を開閉
-    $(this).find(".accordion-menu").slideToggle(300);
-    // タイトルにopenクラスを付け外しして矢印の向きを変更
-    $(this).toggleClass("open", 300);
+  $(".accordion-allow").on("click", function () {
+    $(this).toggleClass("open");// タイトルにopenクラスを付け外しして矢印の向きを変更
+    $(this).next(".accordion-menu").slideToggle();
   });
 });
 

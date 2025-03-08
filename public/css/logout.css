@@ -6,7 +6,7 @@ html{
 
 body{
     height: 100%;/* 画面全体（画面いっぱいに）色がつく */
-    background: linear-gradient(0deg, rgba(255,255,193,1) 0%, rgba(209,255,209,1) 19%, rgba(193,255,255,1) 99%);
+    background: rgb(238,231,224);
 }
 
 .Atlas_logo img{
@@ -22,6 +22,11 @@ body{
     color: #fff;
 }
 
+#container{
+    text-align: center;
+}
+
 .login_form{
-    margin-left: 75rem;
+    display: flex;
+    flex-direction: column;
 }

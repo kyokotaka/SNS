@@ -40,11 +40,14 @@ class User extends Authenticatable
     ];
 
 
-    public function post()//ポストとユーザーを紐付けるリレーション
+    public function posts()//ポストとユーザーを紐付けるリレーション
     {
         return $this->hasMany('App\Models\Post');//一人のユーザーに対してポストは複数あるため
     }
 
+    public function following_userPosts(){
+        return Post::whereIn('user_id', $this->following_user()->pluck('followed_id'));
+    }
     //ユーザー情報を返すため
     public function following_user()//フォローしているユーザーの取得
     {
@@ -60,13 +63,13 @@ class User extends Authenticatable
     public function relation()
     {
         $id = $this->id;
-    
+
         //ログインユーザーが対象ユーザーをフォローしているか？をtrue/falseで返す
         $follow = (boolean) Auth::user()->following_user()->where('followed_id', $id)->first();
-    
+
         //対象Userが自分をフォローしているか？をtrue/falseで返す
         $follower = (boolean) $this->following_user()->where('followed_id', Auth::user()->id)->first();
-    
+
         if(!($follow) && !($follower)){ //0:どちらもフォローしていない
             $result = 0;
         }elseif($follow && !($follower)){ //1：ログインユーザーが相手をフォロー
@@ -76,7 +79,7 @@ class User extends Authenticatable
         }else{ //3：お互いにフォロー
             $result = 3;
         }
-    
+
         return $result;
     }
 

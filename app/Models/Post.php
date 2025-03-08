@@ -5,6 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\User;
+use App\Models\Post;
+use Auth;
 
 class Post extends Model
 {
@@ -18,4 +20,5 @@ class Post extends Model
     {
         return $this->belongsTo('App\Models\User');//ポストに対してユーザーは一人しかいないため
     }
+
 }
